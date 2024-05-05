@@ -1,0 +1,64 @@
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.welcome-message {
+	text-align: center;
+	border: 1px solid #ddd;
+	padding: 50px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	border-radius: 8px;
+}
+
+.welcome-message img {
+	max-width: 35%;
+	height: auto;
+	margin-bottom: 20px; /* Adjusts space between the image and the text */
+}
+
+.welcome-message h1 {
+	margin: 0;
+	margin-bottom: 50px;
+	margin-top: 10px;
+	color: #333;
+	font-size: 2em;
+}
+
+.logo {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.logo img {
+	width: 100px;
+	height: 100px;
+}
+
+.checkmark {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.checkmark img {
+	width: 200px;
+	height: 200px;
+}
+
+.message {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 18px;
+	color: #333;
+}
+
+.text-spacing {
+	margin-bottom: 50px;
+	margin-top: 50px;
+}

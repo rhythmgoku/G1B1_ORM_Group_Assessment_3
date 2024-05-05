@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="3;url=/redirect-to-base">
+<title>Welcome</title>
+<link rel="icon" type="image/png" href="/images/logo2.png" />
+<link rel="stylesheet" type="text/css" href="/css/backbutton.css" />
+<link rel="stylesheet" type="text/css" href="/css/home.css" />
+</head>
+<body>
+	<div class="welcome-message">
+		<div class="row">
+			<div class="inline">
+				<h1>Welcome</h1>
+			</div>
+			<div class="inline text-spacing">
+				<h1 th:text=" '&quot;' + ${username} + '&quot;' "></h1>
+			</div>
+		</div>
+		<div class="row from-top-role-space">
+			<div class="inline ">
+				<h1>Current Highest Role</h1>
+			</div>
+			<div class="inline text-spacing">
+				<h1 th:text=" '&quot;' + ${role} + '&quot;' "></h1>
+			</div>
+		</div>
+
+		<img src="/images/logo2.png" alt="Ticket Tracker Application Logo">
+		<h1>Welcome to the Ticket Tracker Application</h1>
+	</div>
+
+</body>
+</html>

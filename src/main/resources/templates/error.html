@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ticket Tracker Application</title>
+<link rel="icon" type="image/png" href="/images/logo2.png" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/error.css" />
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<!-- Brand -->
+		<a class="navbar-brand" th:href="@{/{role}/tickets (role=${role})}">Ticket
+			Tracker Application</a>
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/{role}/tickets (role=${role})}">Tickets</a></li>
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/{role}/tickets/addnew (role=${role})}">New Ticket</a></li>
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="userDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false" th:text=" 'Hi ' + ${username} + '' "></a>
+					<div class="dropdown-menu dropdown-menu-right"
+						aria-labelledby="userDropdown">
+						<div class="dropdown-item" th:text=" 'Role - ' + ${role}"></div>
+						<div class="dropdown-divider"></div>
+						<a th:href="@{/exit}" class="dropdown-item">Logout</a>
+					</div>
+			</ul>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<div class="container" style="margin-top: 60px;">
+		<div class="row">
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<div class="card-body">
+					<div class="error-container">
+						<p
+							style="font-size: 3em; color: red; font-family: 'Arial Black', sans-serif;">Error</p>
+
+						<h1 id="error-code">404</h1>
+						<p id="error-message">Something went wrong.</p>
+						<p style="font-size: 1.6em; color: red;"
+							th:text="${errorUniqueMessage}"></p>
+						<br> <br>
+						<p style="font-size: 1.2em;">Please click on this button to
+							take you back to the Home Page.</p>
+						<input type="hidden" id="errorCode" name="errorCode"
+							th:value="${errorCode}"> <a th:href="@{/{role}/tickets (role=${role})}">
+							<button id="home-page" type="button">Back to
+								Home Page</</>
+					</div>
+
+					<script>
+						const errorCode = document.getElementById("errorCode").value;
+
+						const errorCodeElement = document
+								.getElementById('error-code');
+						const errorMessageElement = document
+								.getElementById('error-message');
+
+						// Customize the error message
+						if (errorCode === "404") {
+							errorCodeElement.textContent = "404";
+							errorMessageElement.textContent = "Page not found. ";
+						} else if (errorCode === "400") {
+							errorCodeElement.textContent = "400";
+							errorMessageElement.textContent = "Bad Request. ";
+						} else if (errorCode === "401") {
+							errorCodeElement.textContent = "401";
+							errorMessageElement.textContent = "Unauthorized Error.";
+						} else if (errorCode === "403") {
+							errorCodeElement.textContent = "403";
+							errorMessageElement.textContent = "Forbidden / Access Denied";
+						} else if (errorCode === "500") {
+							errorCodeElement.textContent = "500";
+							errorMessageElement.textContent = "Internal Server Error. ";
+						} else if (errorCode === "400") {
+							errorCodeElement.textContent = "405";
+							errorMessageElement.textContent = "Method Not Allowed. ";
+						} else {
+							errorCodeElement.textContent = "404";
+							errorMessageElement.textContent = "Page not found. ";
+						}
+
+						errorMessageDetailElement = errorMsg;
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="bg-dark text-white text-center py-3">
+		<p>&copy; 2024 GreatLearning. All rights reserved.</p>
+	</footer>
+</body>
+</html>
