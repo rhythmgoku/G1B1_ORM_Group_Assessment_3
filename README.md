@@ -16,6 +16,14 @@ Key Features:
 - Ticket Edit : Users can edit the created tickets as per requirements.
 - Ticket Search : Tickets can be searched from the ticket database.
 
+## Gradle Step (if failed load/build the project properly)
+
+
+![](screenshots/Screenshot 2024-05-05 112408.jpg)
+
+
+![](screenshots/Screenshot 2024-05-05 112456.jpg)
+
 
 ## Suggested IDE
 
